@@ -71,3 +71,25 @@ WHERE customerID = 6;
 SELECT CONCAT(firstName, ' ', lastName) AS 'Name',
 CONCAT(address, ' ', city, ', ', state, ' ', zipCode) AS Address
 FROM customerTable;
+
+-- Counts how many firstName rows are in the table
+SELECT COUNT(firstName)
+FROM customerTable;
+
+-- Selects the second highest age in the data
+SELECT MAX(age)
+FROM customerTable
+WHERE age NOT IN (SELECT MAX(age) FROM customerTable);
+
+-- Order By clause, show age in descending order
+SELECT age FROM customerTable
+ORDER BY age DESC;
+
+-- Look for people who live in these cities
+SELECT * FROM customerTable
+WHERE city IN ("Fresno", "Chicago");
+
+-- Optional to use single quotes around the aliase
+SELECT CONCAT(firstName, ' ', lastName) AS 'Name',
+CONCAT(address, ' ', city, ', ', state, ' ', zipCode) AS Address
+FROM customerTable;
