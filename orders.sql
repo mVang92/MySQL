@@ -7,3 +7,10 @@ CREATE TABLE ordersTable
     FOREIGN KEY (customerId) REFERENCES customerTable(customerId),
     FOREIGN KEY (productId) REFERENCES productsTable(productId)
 );
+
+SELECT * FROM ordersTable;
+
+ALTER TABLE ordersTable
+ADD orderNumber INT;
+
+SELECT firstName, lastName FROM customerTable;
