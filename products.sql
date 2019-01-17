@@ -24,5 +24,5 @@ VALUES ("Skittles", 1.49),
 ("Calculator", 9.99),
 ("Corsair K70", 129.99);
 
-SELECT CONCAT(price, ' ', productName) AS 'Products'
+SELECT CONCAT('$', price, ': ', productName) AS 'Products'
 FROM productsTable;

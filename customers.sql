@@ -24,6 +24,8 @@ INSERT INTO customerTable (firstName, lastName, email, age)
 VALUES ("Willy", "Wonka", "w.wonka@chocolateFactory.com", 46);
 INSERT INTO customerTable (firstName, lastName, email, age)
 VALUES ("Meng", "Vang", "something@gmail.com", 26);
+INSERT INTO customerTable (firstName, lastName, email, age)
+VALUES ("Arthur", "Reed", "a.reed@yahoo.com", 26);
 
 SELECT * FROM customerTable;
 
@@ -93,3 +95,24 @@ WHERE city IN ("Fresno", "Chicago");
 SELECT CONCAT(firstName, ' ', lastName) AS 'Name',
 CONCAT(address, ' ', city, ', ', state, ' ', zipCode) AS Address
 FROM customerTable;
+
+ALTER TABLE customerTable
+MODIFY city VARCHAR(55);
+
+UPDATE customerTable
+SET address = '123 Marc Brown St', city = 'Kansas City', state = 'MO', zipCode = 58390
+WHERE customerId = 7;
+
+INSERT INTO customerTable (firstName, lastName, email, age, address, city, state, zipCode)
+VALUES ('Buster', 'Baxter', 'b.baxter@gmail.com', 25, '456 Baxter Rd', 'Kansas City', 'MO', 58391);
+
+-- Find everyone who lives in Missouri
+SELECT CONCAT(firstName, ' ', lastName) AS Customer FROM customerTable
+WHERE state LIKE 'MO';
+
+-- Find everyone using a gmail
+SELECT email AS Email FROM customerTable
+WHERE email LIKE '%gmail%';
+
+SELECT CONCAT(firstName, ' ', lastName) AS Customer, email AS Email FROM customerTable
+WHERE email LIKE '%gmail%';
