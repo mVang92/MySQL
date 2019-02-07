@@ -27,3 +27,16 @@ ON ordersTable.productId = productsTable.productId
 INNER JOIN customerTable
 ON ordersTable.customerId = customerTable.customerId
 ORDER BY ordersTable.orderNumber;
+
+SELECT customerTable.firstName, customerTable.lastName, ordersTable.orderNumber
+FROM customerTable, ordersTable
+WHERE customerTable.customerId = ordersTable.customerId
+ORDER BY customerTable.customerId;
+
+SELECT CONCAT(customerTable.firstName, ' ', customerTable.lastName) AS Customer, ordersTable.orderNumber AS 'Order Number', productsTable.productName AS 'Product Name'
+FROM ordersTable
+INNER JOIN productsTable
+ON ordersTable.productId = productsTable.productId
+INNER JOIN customerTable
+ON ordersTable.customerId = customerTable.customerId
+ORDER BY ordersTable.orderNumber;
