@@ -12,5 +12,6 @@ SELECT * FROM ordersTable;
 
 ALTER TABLE ordersTable
 ADD orderNumber INT;
+ALTER TABLE orders
 
 SELECT firstName, lastName FROM customerTable;

@@ -8,10 +8,9 @@ CREATE TABLE productsTable
 SELECT * FROM productsTable;
 
 -- Can use ADD COLUMN or just ADD
-/*
+
 ALTER TABLE productsTable
 ADD COLUMN price INT(10);
-*/
 
 -- Changing the datatype to a float
 ALTER TABLE productsTable

@@ -116,3 +116,6 @@ WHERE email LIKE '%gmail%';
 
 SELECT CONCAT(firstName, ' ', lastName) AS Customer, email AS Email FROM customerTable
 WHERE email LIKE '%gmail%';
+
+-- Adds an index to the firstName column
+CREATE INDEX fIndex ON customerTable(firstName);
