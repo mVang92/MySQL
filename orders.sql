@@ -17,13 +17,18 @@ ALTER TABLE ordersTable
 ADD orderNumber INT;
 
 ALTER TABLE ordersTable
-MODIFY orderDate DATETIME DEFAULT CURRENT_TIMESTAMP;
+ADD orderDate DATETIME DEFAULT CURRENT_TIMESTAMP;
 
 INSERT INTO ordersTable (customerId, productId, orderNumber)
-VALUES (1, 7, 001),
+VALUES (1, 5, 001),
 (2, 1, 002),
-(3, 6, 003),
+(3, 4, 003),
 (4, 5, 004),
 (5, 2, 005),
 (6, 4, 006),
-(7, 8, 007);
+(7, 3, 007);
+
+-- This will not query because of relationship between the three tables
+-- What is productId 9?
+INSERT INTO ordersTable (customerId, productId, orderNumber)
+VALUES (2, 9, 008);

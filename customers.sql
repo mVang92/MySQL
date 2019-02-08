@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS customers;
 CREATE DATABASE customers;
 USE customers;
 
@@ -65,9 +66,15 @@ WHERE customerId = 4;
 UPDATE customerTable
 SET address = "273 East Dr", city = "Alliance", state = "NE", zipCode = 47389
 WHERE customerId = 5;
+UPDATE customerTable
+SET address = "837 Brown Dr", city = "Kansas City", state = "KS", zipCode = 93748
+WHERE customerId = 6;
 
-DELETE from customerTable
-WHERE customerID = 6;
+ALTER TABLE customerTable
+MODIFY city VARCHAR(50);
+
+/* DELETE from customerTable
+WHERE customerID = 6;*/
 
 -- Displays our data in a prettier view
 SELECT CONCAT(firstName, ' ', lastName) AS 'Name',
