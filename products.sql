@@ -25,3 +25,7 @@ VALUES ("Skittles", 1.49),
 
 SELECT CONCAT('$', price, ': ', productName) AS 'Products'
 FROM productsTable;
+
+SELECT price
+FROM productsTable
+WHERE price > 5;

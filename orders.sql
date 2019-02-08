@@ -32,3 +32,10 @@ VALUES (1, 5, 001),
 -- What is productId 9?
 INSERT INTO ordersTable (customerId, productId, orderNumber)
 VALUES (2, 9, 008);
+
+SELECT CONCAT(customerTable.firstName, ' ', customerTable.lastName) AS 'Customer', ordersTable.orderNumber AS 'Order Number', productsTable.productName AS 'Product Name', productsTable.price AS 'Price'
+FROM customerTable
+INNER JOIN ordersTable
+ON ordersTable.customerId = customerTable.customerId
+INNER JOIN productsTable
+ON ordersTable.productId = productsTable.productId;
